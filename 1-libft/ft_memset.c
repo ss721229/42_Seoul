@@ -6,19 +6,20 @@
 /*   By: sanseo <sanseo@student.42seoul.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:54:22 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/13 21:28:05 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/14 17:42:17 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_memset(void *s, int c, unsigned int n)
+void *ft_memset(void *s, int c, unsigned int n)
 {
     char *str;
 
-    str = (char *) s;
+    str = (char *)s;
     n -= 1;
     while (n >= 0)
     {
         str[n] = c;
         n--;
     }
+    return (s);
 }
