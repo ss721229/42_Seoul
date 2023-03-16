@@ -6,14 +6,14 @@
 /*   By: sanseo <sanseo@student.42seoul.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 17:17:10 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/13 21:23:38 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/16 09:39:02 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int ft_isascii(int c)
 {
-    if (c >= 0 && c <= 255)
-        return (1);
-    else
-        return (0);
+	if (c >= 0 && c <= 255)
+		return (1);
+	else
+		return (0);
 }

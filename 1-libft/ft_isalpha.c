@@ -6,16 +6,16 @@
 /*   By: sanseo <sanseo@student.42seoul.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 00:37:17 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/13 20:44:17 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/16 09:38:45 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int ft_isalpha(int c)
 {
-    if (c <= 'z' && c >= 'a')
-        return (1);
-    else if (c <= 'Z' && c >= 'A')
-        return (1);
-    else
-        return 0;
+	if (c <= 'z' && c >= 'a')
+		return (1);
+	else if (c <= 'Z' && c >= 'A')
+		return (1);
+	else
+		return 0;
 }

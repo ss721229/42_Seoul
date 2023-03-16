@@ -6,14 +6,14 @@
 /*   By: sanseo <sanseo@student.42seoul.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 17:22:00 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/13 20:44:10 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/16 09:39:27 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int ft_isprint(int c)
 {
-    if (c >= 20 && c <= 126)
-        return (1);
-    else
-        return (0);
+	if (c >= 20 && c <= 126)
+		return (1);
+	else
+		return (0);
 }

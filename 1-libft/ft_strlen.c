@@ -6,16 +6,16 @@
 /*   By: sanseo <sanseo@student.42seoul.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:40:17 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/14 17:41:42 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/16 09:39:47 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 unsigned long long ft_strlen(const char *s)
 {
-    const char *ptr;
+	const char *ptr;
 
-    ptr = s;
-    while (*ptr)
-        ptr++;
-    return (ptr - s);
+	ptr = s;
+	while (*ptr)
+		ptr++;
+	return (ptr - s);
 }
