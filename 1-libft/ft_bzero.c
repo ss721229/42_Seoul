@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sanseo <sanseo@student.42seoul.fr>         +#+  +:+       +#+        */
+/*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:23:28 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/16 09:37:49 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/18 19:43:41 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_bzero(void *s, unsigned long long n)
+void	ft_bzero(void *s, unsigned long long n)
 {
-    char *str;
+	char	*str;
 
-    str = (char *) s;
-    while(n > 0)
-    {
-        *str = 0;
-        str++;
-        n--;
-    }
+	str = (char *)s;
+	while (n > 0)
+	{
+		*str = 0;
+		str++;
+		n--;
+	}
 }

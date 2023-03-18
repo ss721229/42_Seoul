@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 20:54:22 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/18 20:02:00 by sanseo           ###   ########.fr       */
+/*   Created: 2023/03/18 17:51:29 by sanseo            #+#    #+#             */
+/*   Updated: 2023/03/18 19:53:42 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, unsigned long long n)
+void	*ft_memchr(const void *s, int c, unsigned long long n)
 {
-	char	*str;
+	unsigned long long	i;
+	char				*str;
 
+	i = 0;
 	str = (char *)s;
-	while (n > 0)
+	while (str[i] && i < n)
 	{
-		n--;
-		str[n] = c;
+		if (str[i] == c)
+			return (str + i);
+		i++;
 	}
-	return (s);
+	return (0);
 }

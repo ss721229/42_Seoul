@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 20:54:22 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/18 20:02:00 by sanseo           ###   ########.fr       */
+/*   Created: 2023/03/18 17:12:18 by sanseo            #+#    #+#             */
+/*   Updated: 2023/03/18 17:51:04 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, unsigned long long n)
+int	ft_strncmp(const char *s1, const char *s2, unsigned long long n)
 {
-	char	*str;
+	unsigned long long	i;
 
-	str = (char *)s;
-	while (n > 0)
+	i = 0;
+	while ((s1[i] || s2[i]) && i < n)
 	{
-		n--;
-		str[n] = c;
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
 	}
-	return (s);
+	return (0);
 }

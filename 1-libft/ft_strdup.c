@@ -1,24 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 20:54:22 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/18 20:02:00 by sanseo           ###   ########.fr       */
+/*   Created: 2023/03/18 19:31:51 by sanseo            #+#    #+#             */
+/*   Updated: 2023/03/18 20:09:35 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, unsigned long long n)
-{
-	char	*str;
+#include<stdlib.h>
 
-	str = (char *)s;
-	while (n > 0)
+unsigned long long	ft_strlen(const char *s)
+{
+	const char	*ptr;
+
+	ptr = s;
+	while (*ptr)
+		ptr++;
+	return (ptr - s);
+}
+
+char	*ft_strdup(const char *s1)
+{
+	char				*str;
+	unsigned long long	i;
+
+	i = ft_strlen(s1);
+	str = (char *)malloc(i);
+	if (str == NULL)
+		return (0);
+	while (i >= 0)
 	{
-		n--;
-		str[n] = c;
+		str[i] = s1[i];
+		i--;
 	}
-	return (s);
+	return (str);
 }

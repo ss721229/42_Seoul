@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 20:54:22 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/18 20:02:00 by sanseo           ###   ########.fr       */
+/*   Created: 2023/03/18 19:07:30 by sanseo            #+#    #+#             */
+/*   Updated: 2023/03/18 19:19:48 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, unsigned long long n)
+int	ft_atoi(const char *str)
 {
-	char	*str;
+	int	num;
+	int	i;
+	int	sign;
 
-	str = (char *)s;
-	while (n > 0)
+	num = 0;
+	i = 0;
+	sign = 1;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		n--;
-		str[n] = c;
+		if (str[i] == '-')
+			sign = -1;
+		i++;
 	}
-	return (s);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		num *= 10;
+		num += str[i] - '0';
+		i++;
+	}
+	return (num * sign);
 }

@@ -1,4 +1,5 @@
-GCC = gcc -Wall -Wextra -Werror
+GCC = gcc
+CFLAG = -Wall -Wextra -Werror
 NAME = libft.a
 SRC = *.c
 OBJ = gcc ${SRC} -o *.o

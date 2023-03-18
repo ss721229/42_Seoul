@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 20:54:22 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/18 20:02:00 by sanseo           ###   ########.fr       */
+/*   Created: 2023/03/18 17:24:23 by sanseo            #+#    #+#             */
+/*   Updated: 2023/03/18 17:25:17 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, unsigned long long n)
+int	ft_lower(int c)
 {
-	char	*str;
-
-	str = (char *)s;
-	while (n > 0)
-	{
-		n--;
-		str[n] = c;
-	}
-	return (s);
+	if (c <= 'Z' && c >= 'A')
+		return (c - 'A' + 'a');
+	else
+		return (c);
 }
