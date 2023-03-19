@@ -6,14 +6,16 @@
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 17:51:29 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/18 19:53:42 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/19 15:48:57 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memchr(const void *s, int c, unsigned long long n)
+#include<stdlib.h>
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned long long	i;
-	char				*str;
+	size_t	i;
+	char	*str;
 
 	i = 0;
 	str = (char *)s;

@@ -6,11 +6,13 @@
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:40:17 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/18 17:51:04 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/19 15:52:45 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned long long	ft_strlen(const char *s)
+#include<stdlib.h>
+
+size_t	ft_strlen(const char *s)
 {
 	const char	*ptr;
 

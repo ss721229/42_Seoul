@@ -6,7 +6,7 @@
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 19:07:30 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/18 19:19:48 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/19 10:14:04 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,11 @@ int	ft_atoi(const char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		num *= 10;
-		num += str[i] - '0';
+		if (sign)
+			num += str[i] - '0';
+		else
+			num -= str[i] - '0';
 		i++;
 	}
-	return (num * sign);
+	return (num);
 }

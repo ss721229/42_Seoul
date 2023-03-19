@@ -1,17 +1,26 @@
 GCC = gcc
 CFLAG = -Wall -Wextra -Werror
+ARFLAGES = crs
+
 NAME = libft.a
-SRC = *.c
-OBJ = gcc ${SRC} -o *.o
-HEADER = libft.h
+SRCS = $(wildcard *.c)
+OBJS = $(SRCS:.c=.o)
+INCLUDES = libft.h
 
+all: $(NAME)
 
-$(NAME)
+%.o: %.c
+	$(GCC) $(CFLAGS) -c $< -o $@ -I $(INCLUDES)
 
-all:
+$(NAME) : $(OBJS)
+	$(AR) $(ARFLAGES) $@ $^
 
 clean:
+	$(RM) $(OBJS)
 
-fclean:
+fclean: clean
+	$(RM) $(NAME)
 
-re:
+re: fclean all
+
+bonus:

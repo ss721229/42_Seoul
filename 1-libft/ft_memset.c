@@ -6,11 +6,13 @@
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 20:54:22 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/18 20:02:00 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/19 15:49:59 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, unsigned long long n)
+#include<stdlib.h>
+
+void	*ft_memset(void *s, int c, size_t n)
 {
 	char	*str;
 

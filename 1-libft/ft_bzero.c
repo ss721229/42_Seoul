@@ -6,11 +6,13 @@
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:23:28 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/18 19:43:41 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/19 15:47:26 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned long long n)
+#include<stdlib.h>
+
+void	ft_bzero(void *s, size_t n)
 {
 	char	*str;
 

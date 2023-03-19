@@ -6,11 +6,13 @@
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 18:37:56 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/18 20:17:18 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/19 15:53:22 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned long long	ft_strlen(const char *s)
+#include<stdlib.h>
+
+size_t	ft_strlen(const char *s)
 {
 	const char	*ptr;
 
@@ -20,9 +22,9 @@ unsigned long long	ft_strlen(const char *s)
 	return (ptr - s);
 }
 
-int	ft_strncmp(const char *s1, const char *s2, unsigned long long n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned long long	i;
+	size_t	i;
 
 	i = 0;
 	while ((s1[i] || s2[i]) && i < n)
@@ -34,12 +36,12 @@ int	ft_strncmp(const char *s1, const char *s2, unsigned long long n)
 	return (0);
 }
 
-char	*ft_strnstr(const char *haystk, const char *ndl, unsigned long long n)
+char	*ft_strnstr(const char *haystk, const char *ndl, size_t n)
 {
-	unsigned long long	i;
-	unsigned long long	len_ndl;
-	char				*str1;
-	char				*str2;
+	size_t	i;
+	size_t	len_ndl;
+	char	*str1;
+	char	*str2;
 
 	str1 = (char *)haystk;
 	str2 = (char *)ndl;

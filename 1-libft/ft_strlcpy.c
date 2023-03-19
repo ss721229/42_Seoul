@@ -6,11 +6,13 @@
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 15:52:32 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/18 20:38:10 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/19 15:52:38 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned long long	ft_strlen(const char *s)
+#include<stdlib.h>
+
+size_t	ft_strlen(const char *s)
 {
 	const char	*ptr;
 
@@ -20,10 +22,9 @@ unsigned long long	ft_strlen(const char *s)
 	return (ptr - s);
 }
 
-unsigned long long	ft_strlcpy(char *restrict dst, const char *restrict sc,
-					unsigned long long n)
+size_t	ft_strlcpy(char *dst, const char *sc, size_t n)
 {
-	unsigned long long	i;
+	size_t	i;
 
 	i = 0;
 	while (sc[i] && i + 1 < n)

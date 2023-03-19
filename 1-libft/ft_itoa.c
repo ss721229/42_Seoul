@@ -1,50 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/18 20:42:56 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/19 15:53:50 by sanseo           ###   ########.fr       */
+/*   Created: 2023/03/19 13:14:28 by sanseo            #+#    #+#             */
+/*   Updated: 2023/03/19 15:59:05 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdlib.h>
 
-/*
-len이 널 포함 길이(?)
-아니면 널을 포함하지 않은 길이(?)
-널을 안붙여도 되나(?)
-일단 널 포함 길이로 짜놓음.
-*/
-
-size_t	ft_strlen(const char *s)
+int	find_int_len(int n)
 {
-	const char	*ptr;
+	int	len;
 
-	ptr = s;
-	while (*ptr)
-		ptr++;
-	return (ptr - s);
+	len = 0;
+	if (n <= 0)
+		len++;
+	while (n)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_itoa(int n)
 {
 	char	*str;
-	size_t	i;
-	size_t	len_s;
+	int		len_n;
+	int		i;
+	int		sign;
 
-	i = 0;
-	str = (char *)malloc(len + 1);
+	len_n = find_int_len(n);
+	str = (char *)malloc(len_n + 1);
 	if (str == NULL)
 		return (0);
-	len_s = ft_strlen(s);
-	while (i + start < len_s && i < len)
+	i = len_n - 1;
+	sign = 1;
+	if (n < 0)
+		sign = -1;
+	while (i >= 0)
 	{
-		str[i] = s[i + start];
-		i++;
+		if (n < 0)
+			str[i--] = n % -10 * (-1) + '0';
+		else
+			str[i--] = n % 10 + '0';
+		n /= 10;
 	}
-	str[i] = 0;
+	if (sign == -1)
+		str[0] = '-';
+	str[len_n] = 0;
 	return (str);
 }
