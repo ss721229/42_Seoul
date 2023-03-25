@@ -6,7 +6,7 @@
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 10:57:41 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/25 08:49:48 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/25 23:13:32 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,16 @@ size_t	find_word_cnt(char const *s, char c)
 	return (cnt);
 }
 
-char	*allo_and_cpy(char *dest, char const *src, size_t n)
+char	*allo_and_cpy(char const *src, size_t n)
 {
+	char	*dest;
 	size_t	i;
 
 	i = 0;
 	dest = (char *)malloc(n + 1);
 	if (dest == NULL)
 		return (0);
-	while (src[i] && i < n)
+	while (i < n)
 	{
 		dest[i] = src[i];
 		i++;
@@ -55,7 +56,7 @@ size_t	find_word_len(char const *s, char c)
 	char	*save;
 
 	save = (char *)s;
-	while (*s != c)
+	while (*s != c && *s)
 		s++;
 	return (s - save);
 }
@@ -66,7 +67,10 @@ void	free_all(char **str, size_t index_str)
 
 	i = 0;
 	while (i < index_str)
-		free(str[index_str]);
+	{
+		free(str[i]);
+		i++;
+	}
 	free(str);
 }
 
@@ -81,16 +85,16 @@ char	**ft_split(char const *s, char c)
 	str = (char **)malloc(sizeof(char *) * (cnt + 1));
 	if (str == NULL)
 		return (0);
-	index_str = 0;
-	while (index_str < cnt)
+	index_str = -1;
+	while (++index_str < cnt)
 	{
 		while (*s == c && *s != '\0')
 			s++;
 		len_word = find_word_len(s, c);
-		str[index_str] = allo_and_cpy(str[index_str], s, len_word);
-		if (str[index_str++] == NULL)
+		str[index_str] = allo_and_cpy(s, len_word);
+		if (str[index_str] == NULL)
 		{
-			free_all(str, index_str - 2);
+			free_all(str, index_str - 1);
 			return (0);
 		}
 		s += len_word;
@@ -98,3 +102,13 @@ char	**ft_split(char const *s, char c)
 	str[index_str] = 0;
 	return (str);
 }
+/*
+#include<stdio.h>
+
+int main()
+{
+	char **str = ft_split("hello!", ' ');
+	for(int i=0;i<10;i++)
+		printf("%d ", str[0][i]);
+}
+*/

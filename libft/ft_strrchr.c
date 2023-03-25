@@ -6,7 +6,7 @@
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 17:39:12 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/18 18:21:13 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/25 12:42:24 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 		str++;
 	while (str - s >= 0)
 	{
-		if (*str == c)
+		if (*str == (char)c)
 			return (str);
 		str--;
 	}

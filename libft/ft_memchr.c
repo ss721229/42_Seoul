@@ -6,7 +6,7 @@
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 17:51:29 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/25 11:30:09 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/25 12:48:38 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,11 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	i = 0;
 	str = (char *)s;
-	while (i < n && (unsigned char)str[i])
+	while (i < n)
 	{
 		if ((unsigned char)str[i] == (unsigned char)c)
 			return (str + i);
 		i++;
 	}
-	if ((unsigned char)str[i] == (unsigned char)c && !(unsigned char)c)
-		return (str + i);
 	return (0);
 }

@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/18 16:32:31 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/25 15:26:45 by sanseo           ###   ########.fr       */
+/*   Created: 2023/03/25 18:04:51 by sanseo            #+#    #+#             */
+/*   Updated: 2023/03/26 00:29:36 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *sc, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	i;
-	size_t	len_dst;
-	size_t	len_src;
+	t_list	*p;
+	t_list	*elem;
+	t_list	*head;
 
-	len_dst = ft_strlen(dst);
-	len_src = ft_strlen(sc);
-	if (len_dst >= n)
-		return (len_src + n);
-	i = 0;
-	while (sc[i] && len_dst + i < n - 1)
+	if (lst == NULL)
+		return (0);
+	p = lst;
+	elem = NULL;
+	while (p)
 	{
-		dst[len_dst + i] = sc[i];
-		i++;
+		elem = ft_lstnew(f(p->content));
+		if (elem == NULL)
+		{
+			ft_lstclear(&head, del);
+			return (0);
+		}
+		ft_lstadd_back(&head, elem);
+		p = p->next;
 	}
-	dst[len_dst + i] = '\0';
-	return (len_src + len_dst);
+	return (head);
 }
