@@ -6,7 +6,7 @@
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 10:57:41 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/25 23:13:32 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/26 10:13:16 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ char	**ft_split(char const *s, char c)
 		str[index_str] = allo_and_cpy(s, len_word);
 		if (str[index_str] == NULL)
 		{
-			free_all(str, index_str - 1);
+			free_all(str, index_str);
 			return (0);
 		}
 		s += len_word;
@@ -102,13 +102,3 @@ char	**ft_split(char const *s, char c)
 	str[index_str] = 0;
 	return (str);
 }
-/*
-#include<stdio.h>
-
-int main()
-{
-	char **str = ft_split("hello!", ' ');
-	for(int i=0;i<10;i++)
-		printf("%d ", str[0][i]);
-}
-*/

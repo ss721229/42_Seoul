@@ -6,16 +6,16 @@
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 19:07:30 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/25 09:31:16 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/26 10:25:48 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*skip_isspace(char *str)
+char	*skip_isspace(const char *str)
 {
 	while (*str == '\t' || *str == '\n' || *str == '\v'
 		|| *str == '\f' || *str == '\r' || *str == ' ')
 			str++;
-	return (str);
+	return ((char *)str);
 }
 
 int	ft_atoi(const char *str)

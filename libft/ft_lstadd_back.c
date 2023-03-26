@@ -6,7 +6,7 @@
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 17:15:55 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/26 00:03:52 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/26 09:29:44 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (lst == NULL || new == NULL)
 		return ;
-	new->next = NULL;
 	if (*lst == NULL)
 		*lst = new;
 	else
