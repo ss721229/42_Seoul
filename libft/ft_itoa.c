@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sanseo <sanseo@student.42seoul.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 13:14:28 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/25 08:51:02 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/27 19:35:28 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	find_int_len(int n)
+static int	find_int_len(int n)
 {
 	int	len;
 

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sanseo <sanseo@student.42seoul.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 10:31:55 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/25 10:07:40 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/27 19:37:47 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_ch(char ch, char const *set)
+static int	check_ch(char ch, char const *set)
 {
 	while (*set)
 	{

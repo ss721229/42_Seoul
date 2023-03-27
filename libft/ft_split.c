@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sanseo <sanseo@student.42seoul.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 10:57:41 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/26 10:13:16 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/27 19:37:10 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	find_word_cnt(char const *s, char c)
+static size_t	find_word_cnt(char const *s, char c)
 {
 	size_t	cnt;
 	int		flag;
@@ -33,7 +33,7 @@ size_t	find_word_cnt(char const *s, char c)
 	return (cnt);
 }
 
-char	*allo_and_cpy(char const *src, size_t n)
+static char	*allo_and_cpy(char const *src, size_t n)
 {
 	char	*dest;
 	size_t	i;
@@ -51,7 +51,7 @@ char	*allo_and_cpy(char const *src, size_t n)
 	return (dest);
 }
 
-size_t	find_word_len(char const *s, char c)
+static size_t	find_word_len(char const *s, char c)
 {
 	char	*save;
 
@@ -61,7 +61,7 @@ size_t	find_word_len(char const *s, char c)
 	return (s - save);
 }
 
-void	free_all(char **str, size_t index_str)
+static void	free_all(char **str, size_t index_str)
 {
 	size_t	i;
 

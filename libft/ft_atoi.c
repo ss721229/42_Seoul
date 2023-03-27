@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sanseo <sanseo@student.42seoul.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 19:07:30 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/26 10:25:48 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/03/27 19:35:00 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*skip_isspace(const char *str)
+static char	*skip_isspace(const char *str)
 {
 	while (*str == '\t' || *str == '\n' || *str == '\v'
 		|| *str == '\f' || *str == '\r' || *str == ' ')
