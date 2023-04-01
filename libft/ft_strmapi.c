@@ -6,7 +6,7 @@
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 16:10:51 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/25 08:52:36 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/04/01 11:52:38 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*str;
 
 	len_s = ft_strlen(s);
-	str = (char *)malloc(ft_strlen(s) + 1);
+	str = (char *)malloc(len_s + 1);
 	if (str == NULL)
 		return (0);
 	i = 0;
