@@ -6,23 +6,23 @@
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 15:52:32 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/25 08:52:27 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/04/01 18:59:26 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *sc, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 
 	i = 0;
-	while (sc[i] && i + 1 < n)
+	while (src[i] && i + 1 < dstsize)
 	{
-		dst[i] = sc[i];
+		dst[i] = src[i];
 		i++;
 	}
-	if (n != 0)
+	if (dstsize != 0)
 		dst[i] = 0;
-	return (ft_strlen(sc));
+	return (ft_strlen(src));
 }

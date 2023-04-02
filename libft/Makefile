@@ -1,5 +1,6 @@
-GCC = gcc
-CFLAG = -Wall -Wextra -Werror
+CC = cc
+RM = rm -f
+CFLAGS = -Wall -Wextra -Werror
 ARFLAGES = crs
 NAME = libft.a
 SRCS =  ft_memset.c ft_strlen.c ft_putchar_fd.c ft_strmapi.c \
@@ -27,7 +28,7 @@ endif
 all: $(NAME)
 
 %.o: %.c $(HEADER)
-	$(GCC) $(CFLAGS) -c $< -o $@ -I $(HEADER)
+	$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADER)
 
 $(NAME): $(OBJ)
 	$(AR) $(ARFLAGES) $(NAME) $^
@@ -37,10 +38,11 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
-	
+
 re: fclean all
 
 bonus:
+	sleep 1
 	make BONUS_GUARD=1 all
 	
 .PHONY: all clean fclean re bonus

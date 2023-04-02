@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sanseo <sanseo@student.42seoul.fr>         +#+  +:+       +#+        */
+/*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 10:31:55 by sanseo            #+#    #+#             */
-/*   Updated: 2023/03/27 19:37:47 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/04/01 18:01:03 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (end >= 0 && check_ch(s1[end], set))
 		end--;
-	if (end == -1)
+	if (end == (size_t) -1)
 		str = (char *)malloc(1);
 	else
 		str = (char *)malloc(end - start + 2);
 	if (str == NULL)
 		return (0);
-	if (end == -1)
+	if (end == (size_t) -1)
 		str[0] = '\0';
 	else
 	{
