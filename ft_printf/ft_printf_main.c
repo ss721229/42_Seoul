@@ -6,13 +6,13 @@
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 12:01:55 by sanseo            #+#    #+#             */
-/*   Updated: 2023/04/09 13:58:03 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/04/16 17:46:03 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf_type(va_list ap, const char *format)
+static int	ft_printf_type(va_list ap, const char *format)
 {
 	int	err_or_len;
 

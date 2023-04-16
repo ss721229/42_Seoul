@@ -1,5 +1,6 @@
 CC = cc
 AR = ar
+RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 ARFLAGS = crs
 NAME = libftprintf.a
