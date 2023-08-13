@@ -6,7 +6,7 @@
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 13:26:55 by sanseo            #+#    #+#             */
-/*   Updated: 2023/06/25 14:45:45 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/08/12 16:18:57 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,17 +48,12 @@ size_t	ft_strlen(const char *s)
 
 char	*ft_strchr(char *s, int c)
 {
-	char	*ptr;
-
-	ptr = (char *)s;
-	while (*ptr)
+	while (*s)
 	{
-		if (*ptr == (char)c)
-			return (ptr);
-		ptr++;
+		if (*s == (char)c)
+			return (s);
+		s++;
 	}
-	if (*ptr == (char)c && !(char)c)
-		return (ptr);
 	return (NULL);
 }
 

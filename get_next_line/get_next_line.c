@@ -6,7 +6,7 @@
 /*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 13:27:17 by sanseo            #+#    #+#             */
-/*   Updated: 2023/07/22 16:19:21 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/08/12 16:03:44 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,7 @@ char	*restore_total(char *total)
 
 	ptr = ft_strchr(total, '\n');
 	if (!ptr)
-	{
-		new_total = NULL;
 		return (ft_free(&total));
-	}
 	else
 		len = (ptr - total) + 1;
 	if (!total[len])
