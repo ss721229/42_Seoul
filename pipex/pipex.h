@@ -3,20 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sanseo <sanseo@student.42seoul.fr>         +#+  +:+       +#+        */
+/*   By: sanseo <sanseo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 18:53:16 by sanseo            #+#    #+#             */
-/*   Updated: 2023/09/27 19:16:59 by sanseo           ###   ########.fr       */
+/*   Updated: 2023/10/08 14:23:42 by sanseo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-#include<fcntl.h>
-#include<stdlib.h>
-#include<sys/wait.h>
+#ifndef PIPEX_H
+# define PIPEX_H
 
-#include <stdio.h>
-#include <string.h>
+# include<unistd.h>
+# include<fcntl.h>
+# include<stdlib.h>
+# include<sys/wait.h>
+# include<stdio.h>
+# include<string.h>
 
 void	ft_free(char ***str);
 void	ft_error(char *message);
@@ -29,3 +31,5 @@ char	**ft_split(char const *s, char c);
 
 void	child_process(char **argv, char **envp, int *fd);
 void	parent_process(char **argv, char **envp, int *fd);
+
+#endif

@@ -1,9 +1,8 @@
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
-ARFLAGS = crs
-NAME = pipex.a
+NAME = pipex
 SRCS = pipex.c util.c util2.c util3.c
-OBJS = $(SRCS:.c=.o)
+OBJS = pipex.o util.o util2.o util3.o
 RM = rm -rf
 
 all: $(NAME)
@@ -12,7 +11,7 @@ all: $(NAME)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	$(AR) $(ARFLAGS) $(NAME) $^
+	$(CC) $(CFLAGS) $^ -o $@
 
 clean:
 	$(RM) $(OBJS)
